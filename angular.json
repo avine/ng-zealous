@@ -76,6 +76,32 @@
           "builder": "@angular/build:unit-test"
         }
       }
+    },
+    "ng-zealous": {
+      "projectType": "library",
+      "root": "projects/ng-zealous",
+      "sourceRoot": "projects/ng-zealous/src",
+      "prefix": "z",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ng-zealous/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ng-zealous/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/ng-zealous/tsconfig.spec.json"
+          }
+        }
+      }
     }
   }
 }
