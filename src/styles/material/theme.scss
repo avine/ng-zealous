@@ -1,0 +1,36 @@
+@use '@angular/material' as mat;
+
+@use './theme-colors' as colors;
+@use './theme-overrides' as overrides;
+
+html {
+  color-scheme: light;
+
+  @include mat.theme(
+    (
+      color: (
+        primary: colors.$primary-palette,
+        tertiary: colors.$tertiary-palette,
+      ),
+      typography: (
+        plain-family: '"Nunito"',
+        brand-family: '"Nunito"',
+        // The weight of the fonts is defined in `../fonts.scss`
+        regular-weight: 300,
+        medium-weight: 500,
+        bold-weight: 700,
+      ),
+      // Note that when using a density <= -2, some Material components may have limitations!
+      // For example, the `<mat-label>` inside a `<mat-form-field appearance="fill">` will NOT be rendered.
+      density: -1,
+    ),
+    $overrides: overrides.$theme-overrides
+  );
+}
+
+@include mat.system-classes();
+
+// The CSS class `z-theme-dark` is used by ng-zealous to switch to dark mode.
+body.z-theme-dark {
+  color-scheme: dark;
+}

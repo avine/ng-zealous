@@ -1,0 +1,15 @@
+// The weight of the fonts must be configured in `./material/_index.scss`:
+//
+// typography: (
+//   regular-weight: 400,
+//   medium-weight: 500,
+//   bold-weight: 600,
+// ),
+//
+@use '@fontsource/nunito/latin-300.css';
+@use '@fontsource/nunito/latin-500.css';
+@use '@fontsource/nunito/latin-700.css';
+
+@use '@fontsource/source-code-pro';
+
+@use '@material-symbols/font-500/outlined.css';

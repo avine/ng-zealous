@@ -1,0 +1,56 @@
+//@use '../../projects/ng-zealous/styles/config' as config;
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  background: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font-family: var(--mat-sys-body-large-font);
+  line-height: 1.5;
+}
+
+//*:focus-visible {
+//  @include config.focus-visible();
+//}
+
+*::selection {
+  background-color: var(--mat-sys-secondary-container);
+  color: var(--mat-sys-secondary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+hr {
+  margin: 1.5rem 0;
+  border: none;
+  border-top: 1px solid var(--mat-sys-outline-variant);
+}
+
+button {
+  cursor: pointer;
+}
+
+code {
+  font-size: 0.9375em;
+  font-family: 'Source Code Pro', monospace;
+}

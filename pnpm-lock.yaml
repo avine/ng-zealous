@@ -38,6 +38,15 @@ importers:
       '@angular/ssr':
         specifier: ^21.0.0
         version: 21.0.0(@angular/common@21.0.0(@angular/core@21.0.0(@angular/compiler@21.0.0)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.0(@angular/compiler@21.0.0)(rxjs@7.8.2))(@angular/platform-server@21.0.0(@angular/common@21.0.0(@angular/core@21.0.0(@angular/compiler@21.0.0)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/compiler@21.0.0)(@angular/core@21.0.0(@angular/compiler@21.0.0)(rxjs@7.8.2))(@angular/platform-browser@21.0.0(@angular/common@21.0.0(@angular/core@21.0.0(@angular/compiler@21.0.0)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.0(@angular/compiler@21.0.0)(rxjs@7.8.2)))(rxjs@7.8.2))(@angular/router@21.0.0(@angular/common@21.0.0(@angular/core@21.0.0(@angular/compiler@21.0.0)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.0(@angular/compiler@21.0.0)(rxjs@7.8.2))(@angular/platform-browser@21.0.0(@angular/common@21.0.0(@angular/core@21.0.0(@angular/compiler@21.0.0)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.0.0(@angular/compiler@21.0.0)(rxjs@7.8.2)))(rxjs@7.8.2))
+      '@fontsource/nunito':
+        specifier: ^5.2.7
+        version: 5.2.7
+      '@fontsource/source-code-pro':
+        specifier: ^5.2.7
+        version: 5.2.7
+      '@material-symbols/font-500':
+        specifier: ^0.39.4
+        version: 0.39.4
       express:
         specifier: ^5.1.0
         version: 5.1.0
@@ -752,6 +761,12 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@fontsource/nunito@5.2.7':
+    resolution: {integrity: sha512-pmtBq0H9ex9nk+RtJYEJOD9pag393iHETnl/PVKleF4i06cd0ttngK5ZCTgYb5eOqR3Xdlrjtev8m7bmgYprew==}
+
+  '@fontsource/source-code-pro@5.2.7':
+    resolution: {integrity: sha512-7papq9TH94KT+S5VSY8cU7tFmwuGkIe3qxXRMscuAXH6AjMU+KJI75f28FzgBVDrlMfA0jjlTV4/x5+H5o/5EQ==}
+
   '@inquirer/ansi@1.0.2':
     resolution: {integrity: sha512-S8qNSZiYzFd0wAcyG5AXCvUHC5Sr7xpZ9wZ2py9XR88jUz8wooStVx5M6dRzczbBWjic9NP7+rY0Xi7qqK/aMQ==}
     engines: {node: '>=18'}
@@ -972,6 +987,9 @@ packages:
     resolution: {integrity: sha512-1JdBkcO0Vrua4LUgr4jAe4FUyluwCeq/pDkBrlaVjX3/BBWP1TzVjCL+TibWNQtPAL1BITXPAhlK5Ru4FBd/hg==}
     cpu: [x64]
     os: [win32]
+
+  '@material-symbols/font-500@0.39.4':
+    resolution: {integrity: sha512-3jD0XlQPHRDAOQhU0re+77MYICfQU/OSPaYXKQHyopzhkNpAfiLqLi16RJLgKBU78skAN1NL7Hefswwg6OntrA==}
 
   '@modelcontextprotocol/sdk@1.20.1':
     resolution: {integrity: sha512-j/P+yuxXfgxb+mW7OEoRCM3G47zCTDqUPivJo/VzpjbG8I9csTXtOprCf5FfOfHK4whOJny0aHuBEON+kS7CCA==}
@@ -3633,6 +3651,10 @@ snapshots:
   '@esbuild/win32-x64@0.26.0':
     optional: true
 
+  '@fontsource/nunito@5.2.7': {}
+
+  '@fontsource/source-code-pro@5.2.7': {}
+
   '@inquirer/ansi@1.0.2': {}
 
   '@inquirer/checkbox@4.3.2(@types/node@20.19.25)':
@@ -3833,6 +3855,8 @@ snapshots:
 
   '@lmdb/lmdb-win32-x64@3.4.3':
     optional: true
+
+  '@material-symbols/font-500@0.39.4': {}
 
   '@modelcontextprotocol/sdk@1.20.1':
     dependencies:
