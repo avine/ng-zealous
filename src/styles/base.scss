@@ -1,4 +1,4 @@
-//@use '../../projects/ng-zealous/styles/config' as config;
+@use '../../projects/ng-zealous/styles/config' as config;
 
 html,
 body {
@@ -18,9 +18,9 @@ body {
   line-height: 1.5;
 }
 
-//*:focus-visible {
-//  @include config.focus-visible();
-//}
+*:focus-visible {
+  @include config.focus-visible();
+}
 
 *::selection {
   background-color: var(--mat-sys-secondary-container);

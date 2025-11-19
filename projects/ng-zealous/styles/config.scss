@@ -1,0 +1,25 @@
+// Sass variables that are needed across MULTIPLE "ng-zealous" modules.
+//
+// WARNING:
+// Do not use this file to define variables that are only used by a single "ng-zealous" module.
+
+// ----- Box model -----
+
+$box-padding-block: 1rem; // Vertical space inside a box
+$box-padding-inline: 1.25rem; // Horizontal space inside a box
+$box-margin: 1.875rem; // Large margin between boxes (to isolate each of them)
+$box-group-gap: 0.75rem; // Small gap between boxes (so that they form a group)
+
+// ----- Focus visible -----
+
+$focus-visible-border-width: 2px;
+
+@mixin focus-visible($inner-offset: false) {
+  outline: $focus-visible-border-width solid var(--mat-sys-outline);
+
+  @if $inner-offset {
+    outline-offset: -#{$focus-visible-border-width};
+  } @else {
+    outline-offset: 2px; // Note: this is always `2px` (not related to `$focus-visible-border-width`)
+  }
+}

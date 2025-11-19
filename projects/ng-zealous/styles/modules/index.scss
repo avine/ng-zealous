@@ -1,0 +1,5 @@
+// NOTE:
+// This folder contains only, CSS styles required by some modules of the `ng-zealous/*` library.
+// Because these styles could not be defined as styles of an Angular component, they must be imported globally.
+
+@forward './icon';

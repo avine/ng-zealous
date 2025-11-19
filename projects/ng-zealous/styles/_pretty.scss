@@ -1,0 +1,146 @@
+// Styles that are global have the prefix `.z-sys-*`.
+
+:root {
+  --z-sys-pretty-margin-content: 1.5rem;
+  --z-sys-pretty-margin-list: 0.75em;
+}
+
+// To apply the following styles, use a wrapper element with `z-sys-pretty` CSS class, like this:
+//
+//   <div class="z-sys-pretty">
+//     <h1>Pretty heading</h1>
+//     <p>Pretty paragraph and <strong>pretty strong</strong>.</p>
+//   </div>
+//
+
+:where(.z-sys-pretty) {
+  h1 {
+    font: var(--mat-sys-display-medium);
+    letter-spacing: var(--mat-sys-display-medium-tracking);
+    margin: 0 0 var(--z-sys-pretty-margin-content);
+  }
+  h2 {
+    font: var(--mat-sys-headline-large);
+    letter-spacing: var(--mat-sys-headline-large-tracking);
+    margin: 0 0 var(--z-sys-pretty-margin-content);
+  }
+  h3 {
+    font: var(--mat-sys-headline-medium);
+    letter-spacing: var(--mat-sys-headline-medium-tracking);
+    margin: 0 0 var(--z-sys-pretty-margin-content);
+  }
+  h4 {
+    font: var(--mat-sys-headline-small);
+    letter-spacing: var(--mat-sys-headline-small-tracking);
+    margin: 0 0 var(--z-sys-pretty-margin-content);
+  }
+  h5 {
+    font: var(--mat-sys-title-large);
+    letter-spacing: var(--mat-sys-title-large-tracking);
+    margin: 0;
+  }
+  h6 {
+    font: var(--mat-sys-label-large);
+    letter-spacing: var(--mat-sys-label-large-tracking);
+    margin: 0;
+  }
+
+  hr {
+    margin-block: var(--z-sys-pretty-margin-content);
+  }
+
+  p {
+    margin: 0 0 var(--z-sys-pretty-margin-content);
+
+    &:has(+ ol, + ul) {
+      margin: 0 0 var(--z-sys-pretty-margin-list);
+    }
+  }
+}
+
+// To apply the following styles:
+//
+//   1. use a wrapper element with `z-sys-pretty` CSS class, like this:
+//
+//   <div class="z-sys-pretty">
+//     <a href="#">Pretty link</a>
+//   </div>
+//
+//   2. or apply `z-sys-pretty` CSS class on the targeted element directly, like this:
+//
+//   <a class="z-sys-pretty" href="#">Pretty link</a>
+//
+
+:where(.z-sys-pretty) a,
+a:where(.z-sys-pretty) {
+  text-decoration: underline;
+  transition: color 150ms ease;
+
+  &:hover {
+    color: var(--mat-sys-primary);
+  }
+}
+
+:where(.z-sys-pretty) ol,
+:where(.z-sys-pretty) ul,
+ol:where(.z-sys-pretty),
+ul:where(.z-sys-pretty) {
+  margin: 0 0 var(--z-sys-pretty-margin-content) var(--z-sys-pretty-margin-list);
+
+  ol,
+  ul {
+    margin: 0;
+    margin-top: var(--z-sys-pretty-margin-list);
+    margin-left: 0.5em;
+  }
+}
+
+:where(.z-sys-pretty) li + li {
+  margin-top: var(--z-sys-pretty-margin-list);
+}
+
+:where(.z-sys-pretty) ol,
+ol:where(.z-sys-pretty) {
+  list-style: decimal;
+  padding-inline-start: 1rem;
+}
+
+:where(.z-sys-pretty) ul,
+ul:where(.z-sys-pretty) {
+  padding-left: 0.5em;
+
+  > li {
+    padding-left: 0.5em;
+
+    &::marker {
+      content: '◦';
+    }
+
+    ul > li::marker {
+      content: '→';
+    }
+  }
+}
+
+:where(.z-sys-pretty) code,
+code:where(.z-sys-pretty) {
+  border: 1px solid var(--mat-sys-outline-variant);
+  background-color: transparent;
+  padding: 0.065em 0.375em;
+  border-radius: 0.5rem;
+}
+
+:where(.z-sys-pretty) pre,
+pre:where(.z-sys-pretty) {
+  &:has(> code) {
+    margin: 0 0 var(--z-sys-pretty-margin-content);
+  }
+}
+
+:where(.z-sys-pretty) pre code,
+pre:where(.z-sys-pretty) code {
+  display: block;
+  overflow: auto;
+  padding: 0.5em 0.75em;
+  border-radius: 0.5rem;
+}

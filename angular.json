@@ -10,7 +10,8 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "viewEncapsulation": "None"
         }
       },
       "root": "",
@@ -79,8 +80,33 @@
     },
     "ng-zealous": {
       "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "path": "projects/ng-zealous",
+          "style": "scss",
+          "viewEncapsulation": "None"
+        },
+        "@schematics/angular:directive": {
+          "path": "projects/ng-zealous"
+        },
+        "@schematics/angular:service": {
+          "path": "projects/ng-zealous"
+        },
+        "@schematics/angular:pipe": {
+          "path": "projects/ng-zealous"
+        },
+        "@schematics/angular:resolver": {
+          "path": "projects/ng-zealous"
+        },
+        "@schematics/angular:guard": {
+          "path": "projects/ng-zealous"
+        },
+        "@schematics/angular:interceptor": {
+          "path": "projects/ng-zealous"
+        }
+      },
       "root": "projects/ng-zealous",
-      "sourceRoot": "projects/ng-zealous/src",
+      "sourceRoot": "projects/ng-zealous",
       "prefix": "z",
       "architect": {
         "build": {

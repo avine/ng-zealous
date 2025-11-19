@@ -1,0 +1,50 @@
+// Styles that are global have the prefix `.z-sys-*`.
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &:where(.z-sys-reset) {
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+}
+
+p {
+  &:where(.z-sys-reset) {
+    margin: 0;
+  }
+}
+
+a {
+  &:where(.z-sys-reset) {
+    color: inherit;
+    text-decoration: inherit;
+  }
+}
+
+ol,
+ul {
+  &:where(.z-sys-reset) {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+button,
+input,
+textarea {
+  &:where(.z-sys-reset) {
+    padding: 0;
+    border: none;
+    background: none;
+    color: inherit;
+    line-height: inherit;
+    text-align: start;
+    font: inherit;
+  }
+}

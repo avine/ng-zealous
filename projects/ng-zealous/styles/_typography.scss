@@ -1,0 +1,85 @@
+// !DEPRECATED (use `@include mat.system-classes();` instead. See: https://material.angular.dev/guide/theming)
+
+// Styles that are global have the prefix `.z-sys-*`.
+// Typography is based on Material typography variables
+
+// ----- Display (h1 - h3) -----
+
+.z-sys-display-large {
+  font: var(--mat-sys-display-large);
+  letter-spacing: var(--mat-sys-display-large-tracking);
+  margin: 0 0 2rem;
+}
+.z-sys-display-medium {
+  font: var(--mat-sys-display-medium);
+  letter-spacing: var(--mat-sys-display-medium-tracking);
+  margin: 0 0 2rem;
+}
+.z-sys-display-small {
+  font: var(--mat-sys-display-small);
+  letter-spacing: var(--mat-sys-display-small-tracking);
+  margin: 0 0 2rem;
+}
+
+// ----- Headline (h4 - h5) -----
+
+.z-sys-headline-large {
+  font: var(--mat-sys-headline-large);
+  letter-spacing: var(--mat-sys-headline-large-tracking);
+  margin: 0 0 1.5rem;
+}
+.z-sys-headline-medium {
+  font: var(--mat-sys-headline-medium);
+  letter-spacing: var(--mat-sys-headline-medium-tracking);
+  margin: 0 0 1.5rem;
+}
+.z-sys-headline-small {
+  font: var(--mat-sys-headline-small);
+  letter-spacing: var(--mat-sys-headline-small-tracking);
+  margin: 0 0 1.5rem;
+}
+
+// ----- Title -----
+
+.z-sys-title-large {
+  font: var(--mat-sys-title-large);
+  letter-spacing: var(--mat-sys-title-large-tracking);
+}
+.z-sys-title-medium {
+  font: var(--mat-sys-title-medium);
+  letter-spacing: var(--mat-sys-title-medium-tracking);
+}
+.z-sys-title-small {
+  font: var(--mat-sys-title-small);
+  letter-spacing: var(--mat-sys-title-small-tracking);
+}
+
+// ----- Body -----
+
+.z-sys-body-large {
+  font: var(--mat-sys-body-large); // Note: this is the default font-size (1rem)
+  letter-spacing: var(--mat-sys-body-large-tracking);
+}
+.z-sys-body-medium {
+  font: var(--mat-sys-body-medium);
+  letter-spacing: var(--mat-sys-body-medium-tracking);
+}
+.z-sys-body-small {
+  font: var(--mat-sys-body-small);
+  letter-spacing: var(--mat-sys-body-small-tracking);
+}
+
+// ----- Label -----
+
+.z-sys-label-large {
+  font: var(--mat-sys-label-large);
+  letter-spacing: var(--mat-sys-label-large-tracking);
+}
+.z-sys-label-medium {
+  font: var(--mat-sys-label-medium);
+  letter-spacing: var(--mat-sys-label-medium-tracking);
+}
+.z-sys-label-small {
+  font: var(--mat-sys-label-small);
+  letter-spacing: var(--mat-sys-label-small-tracking);
+}

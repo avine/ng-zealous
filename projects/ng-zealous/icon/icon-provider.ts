@@ -1,7 +1,7 @@
 import { inject, provideAppInitializer } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 
-export const provideIcons = () =>
+export const provideZIcons = () =>
   provideAppInitializer(() => {
     // Set font class according to the NPM package installed: "@material-symbols/font-500"
     // Values: 'material-symbols-outlined', 'material-symbols-rounded' or 'material-symbols-sharp'.
