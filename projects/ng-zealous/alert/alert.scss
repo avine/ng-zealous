@@ -20,26 +20,53 @@
 
   &--info {
     // From Tailwind CSS "blue" color
-    --z-alert-border-color: light-dark(oklch(80.9% 0.105 251.813), oklch(42.4% 0.199 265.638)); // 300, 800
-    --z-alert-background-color: light-dark(oklch(93.2% 0.032 255.585), oklch(28.2% 0.091 267.935)); // 100, 950
+    --z-alert-border-color: light-dark(
+      oklch(80.9% 0.105 251.813),
+      oklch(42.4% 0.199 265.638)
+    ); // 300, 800
+    --z-alert-background-color: light-dark(
+      oklch(93.2% 0.032 255.585),
+      oklch(28.2% 0.091 267.935)
+    ); // 100, 950
     --z-alert-color: light-dark(oklch(37.9% 0.146 265.522), oklch(93.2% 0.032 255.585)); // 900, 100
-    --z-alert-highlight-color: light-dark(oklch(42.4% 0.199 265.638), oklch(88.2% 0.059 254.128)); // 800, 200
+    --z-alert-highlight-color: light-dark(
+      oklch(42.4% 0.199 265.638),
+      oklch(88.2% 0.059 254.128)
+    ); // 800, 200
   }
 
   &--success {
     // From Tailwind CSS "green" color
-    --z-alert-border-color: light-dark(oklch(87.1% 0.15 154.449), oklch(44.8% 0.119 151.328)); // 300, 800
-    --z-alert-background-color: light-dark(oklch(96.2% 0.044 156.743), oklch(26.6% 0.065 152.934)); // 100, 950
+    --z-alert-border-color: light-dark(
+      oklch(87.1% 0.15 154.449),
+      oklch(44.8% 0.119 151.328)
+    ); // 300, 800
+    --z-alert-background-color: light-dark(
+      oklch(96.2% 0.044 156.743),
+      oklch(26.6% 0.065 152.934)
+    ); // 100, 950
     --z-alert-color: light-dark(oklch(39.3% 0.095 152.535), oklch(96.2% 0.044 156.743)); // 900, 100
-    --z-alert-highlight-color: light-dark(oklch(44.8% 0.119 151.328), oklch(92.5% 0.084 155.995)); // 800, 200
+    --z-alert-highlight-color: light-dark(
+      oklch(44.8% 0.119 151.328),
+      oklch(92.5% 0.084 155.995)
+    ); // 800, 200
   }
 
   &--danger {
     // From Tailwind CSS "red" color
-    --z-alert-border-color: light-dark(oklch(80.8% 0.114 19.571), oklch(44.4% 0.177 26.899)); // 300, 800
-    --z-alert-background-color: light-dark(oklch(93.6% 0.032 17.717), oklch(25.8% 0.092 26.042)); // 100, 950
+    --z-alert-border-color: light-dark(
+      oklch(80.8% 0.114 19.571),
+      oklch(44.4% 0.177 26.899)
+    ); // 300, 800
+    --z-alert-background-color: light-dark(
+      oklch(93.6% 0.032 17.717),
+      oklch(25.8% 0.092 26.042)
+    ); // 100, 950
     --z-alert-color: light-dark(oklch(39.6% 0.141 25.723), oklch(93.6% 0.032 17.717)); // 900, 100
-    --z-alert-highlight-color: light-dark(oklch(44.4% 0.177 26.899), oklch(88.5% 0.062 18.334)); // 800, 200
+    --z-alert-highlight-color: light-dark(
+      oklch(44.4% 0.177 26.899),
+      oklch(88.5% 0.062 18.334)
+    ); // 800, 200
   }
 
   &--light {

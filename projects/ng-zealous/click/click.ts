@@ -17,7 +17,9 @@ import { ZClickNavigationParams, ZClickRole } from './click-types';
 export class ZClick {
   private router = inject(Router);
 
-  params = input.required<ZClickNavigationParams | ZClickNavigationParams['commands'] | CallableFunction>({
+  params = input.required<
+    ZClickNavigationParams | ZClickNavigationParams['commands'] | CallableFunction
+  >({
     alias: 'zClick',
   });
 

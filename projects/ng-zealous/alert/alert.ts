@@ -1,4 +1,12 @@
-import { Component, ViewEncapsulation, booleanAttribute, computed, inject, input, model } from '@angular/core';
+import {
+  Component,
+  ViewEncapsulation,
+  booleanAttribute,
+  computed,
+  inject,
+  input,
+  model,
+} from '@angular/core';
 import { MatRippleModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { ZIconModule } from 'ng-zealous/icon';
@@ -81,7 +89,9 @@ export class ZAlert {
    * Computed classes for the host element based on type and visibility.
    */
   protected hostClass = computed(() =>
-    ['z-alert', `z-alert--${this.type()}`].concat(!this.visible() ? 'z-alert--hidden' : []).join(' '),
+    ['z-alert', `z-alert--${this.type()}`]
+      .concat(!this.visible() ? 'z-alert--hidden' : [])
+      .join(' '),
   );
 
   /**

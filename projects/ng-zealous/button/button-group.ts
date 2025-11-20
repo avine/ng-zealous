@@ -36,6 +36,9 @@ export class ZButtonGroup {
   vertical = input(false, { transform: booleanAttribute });
 
   protected hostClass = computed(() =>
-    ['z-button-group', this.vertical() ? 'z-button-group--vertical' : 'z-button-group--horizontal'].join(' '),
+    [
+      'z-button-group',
+      this.vertical() ? 'z-button-group--vertical' : 'z-button-group--horizontal',
+    ].join(' '),
   );
 }

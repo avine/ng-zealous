@@ -5,6 +5,8 @@ export const _isNavigationParams = (params?: unknown): params is ZClickNavigatio
   return !!(params && typeof params === 'object' && commands in params);
 };
 
-export const _isNavigationCommands = (params?: unknown): params is ZClickNavigationParams['commands'] => {
+export const _isNavigationCommands = (
+  params?: unknown,
+): params is ZClickNavigationParams['commands'] => {
   return Array.isArray(params);
 };

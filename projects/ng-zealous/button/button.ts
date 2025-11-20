@@ -1,4 +1,12 @@
-import { booleanAttribute, Component, computed, contentChild, inject, input, ViewEncapsulation } from '@angular/core';
+import {
+  booleanAttribute,
+  Component,
+  computed,
+  contentChild,
+  inject,
+  input,
+  ViewEncapsulation,
+} from '@angular/core';
 import { MatRipple } from '@angular/material/core';
 import { ZButtonIcon } from './button-icon';
 import { ZButtonColor, ZButtonJustifyContent, ZButtonTextAlign, ZButtonType } from './button-types';
@@ -98,7 +106,8 @@ export class ZButton {
    */
   typeAlias = input(undefined, {
     alias: 'zButton',
-    transform: (type: ZButtonType | undefined | ''): ZButtonType | undefined => (type === '' ? undefined : type),
+    transform: (type: ZButtonType | undefined | ''): ZButtonType | undefined =>
+      type === '' ? undefined : type,
   });
 
   /**
