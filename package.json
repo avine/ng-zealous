@@ -4,12 +4,15 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start:docs": "ng serve ng-zealous-docs",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:starter": "node dist/starter/server/server.mjs",
+    "start:docs": "ng serve ng-zealous-docs",
+    "build:docs": "ng build ng-zealous-docs",
     "serve:ssr:docs": "node dist/ng-zealous-docs/server/server.mjs",
+    "build:lib": "ng build ng-zealous",
+    "test:lib": "ng test ng-zealous",
+    "e2e": "playwright test",
     "format": "prettier --write ."
   },
   "prettier": {
@@ -59,6 +62,7 @@
     "@angular/cli": "^21.0.0",
     "@angular/compiler-cli": "^21.0.0",
     "@angular/localize": "^21.0.0",
+    "@playwright/test": "^1.56.1",
     "@types/express": "^5.0.1",
     "@types/node": "^20.17.19",
     "jsdom": "^27.1.0",
