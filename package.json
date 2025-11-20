@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:starter": "node dist/starter/server/server.mjs",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "serve:ssr:ng-zealous-docs": "node dist/ng-zealous-docs/server/server.mjs"
   },
   "prettier": {
     "printWidth": 100,
