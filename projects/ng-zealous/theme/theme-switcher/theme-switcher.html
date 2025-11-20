@@ -1,0 +1,3 @@
+<button matIconButton [attr.aria-label]="intl.SwitchTheme" (click)="themeService.switch()">
+  <mat-icon>{{ themeService.theme() === 'light' ? 'dark_mode' : 'light_mode' }}</mat-icon>
+</button>

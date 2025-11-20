@@ -1,0 +1,8 @@
+.z-theme-switcher {
+  opacity: 0;
+  transition: opacity 250ms ease-out;
+
+  &--visible {
+    opacity: 1;
+  }
+}
