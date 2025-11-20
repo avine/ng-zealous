@@ -1,0 +1,106 @@
+<z-demo-container [state]="demoState">
+  @if (!demoState.customStyle()) {
+    <h2 class="z-sys-headline-small">Button</h2>
+
+    <button
+      [zButton]="demoState.type()"
+      [color]="demoState.color()"
+      [rounded]="demoState.rounded()"
+      [style.width]="demoState.width()"
+      [style.height]="demoState.height()"
+      [separator]="demoState.separator()"
+      [vertical]="demoState.vertical()"
+      [verticalOnMobile]="demoState.verticalOnMobile()"
+      [reverse]="demoState.reverse()"
+      [justifyContent]="demoState.justifyContent()"
+      [textAlign]="demoState.textAlign()"
+      [disabled]="demoState.buttonDisabled()"
+    >
+      @if (demoState.icon()) {
+        <mat-icon zButtonIcon [size]="demoState.iconSize()">{{ demoState.icon() }}</mat-icon>
+      }
+      <ng-container [ngTemplateOutlet]="text" />
+    </button>
+
+    <h2 class="z-sys-headline-small" style="margin-top: 1.5rem">Link</h2>
+
+    <a
+      [zButton]="demoState.type()"
+      [color]="demoState.color()"
+      [rounded]="demoState.rounded()"
+      [style.width]="demoState.width()"
+      [style.height]="demoState.height()"
+      [separator]="demoState.separator()"
+      [vertical]="demoState.vertical()"
+      [verticalOnMobile]="demoState.verticalOnMobile()"
+      [reverse]="demoState.reverse()"
+      [justifyContent]="demoState.justifyContent()"
+      [textAlign]="demoState.textAlign()"
+      routerLink="/button"
+    >
+      @if (demoState.icon()) {
+        <mat-icon zButtonIcon [size]="demoState.iconSize()">{{ demoState.icon() }}</mat-icon>
+      }
+      <ng-container [ngTemplateOutlet]="text" />
+    </a>
+
+    <h2 class="z-sys-headline-small" style="margin-top: 1.5rem">Component</h2>
+
+    <z-button
+      [type]="demoState.type()"
+      [color]="demoState.color()"
+      [rounded]="demoState.rounded()"
+      [style.width]="demoState.width()"
+      [style.height]="demoState.height()"
+      [separator]="demoState.separator()"
+      [vertical]="demoState.vertical()"
+      [verticalOnMobile]="demoState.verticalOnMobile()"
+      [reverse]="demoState.reverse()"
+      [justifyContent]="demoState.justifyContent()"
+      [textAlign]="demoState.textAlign()"
+      [zClick]="clickHandler"
+    >
+      @if (demoState.icon()) {
+        <mat-icon zButtonIcon [size]="demoState.iconSize()">{{ demoState.icon() }}</mat-icon>
+      }
+      <ng-container [ngTemplateOutlet]="text" />
+    </z-button>
+  } @else {
+    <h2 class="z-sys-headline-small">Custom</h2>
+
+    <button
+      zButton
+      [rounded]="demoState.rounded()"
+      [style.width]="demoState.width()"
+      [style.height]="demoState.height()"
+      [separator]="demoState.separator()"
+      [vertical]="demoState.vertical()"
+      [verticalOnMobile]="demoState.verticalOnMobile()"
+      [reverse]="demoState.reverse()"
+      [justifyContent]="demoState.justifyContent()"
+      [textAlign]="demoState.textAlign()"
+      style="
+        --z-button-border-color: var(--mat-sys-on-tertiary-container);
+        --z-button-background-color: var(--mat-sys-tertiary);
+        --z-button-color: var(--mat-sys-on-tertiary);
+      "
+    >
+      @if (demoState.icon()) {
+        <mat-icon zButtonIcon [size]="demoState.iconSize()">{{ demoState.icon() }}</mat-icon>
+      }
+      <ng-container [ngTemplateOutlet]="text" />
+    </button>
+  }
+
+  <ng-template #text>
+    @switch (demoState.text()) {
+      @case ('single-line') {
+        Lorem ipsum dolor sit amet
+      }
+      @case ('multi-line') {
+        Lorem ipsum dolor sit amet<br />
+        incidunt officiis quia blanditiis aspernatur amet
+      }
+    }
+  </ng-template>
+</z-demo-container>

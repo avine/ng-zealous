@@ -1,0 +1,31 @@
+@let iconValue = icon() ?? iconMap[type()];
+
+@if (iconValue) {
+  <mat-icon class="z-alert__icon" zIcon size="xl">{{ iconValue }}</mat-icon>
+}
+
+<div
+  class="z-alert__container"
+  [class.z-alert__container--with-icon]="!!iconValue"
+  [class.z-alert__container--closable]="!nonClosable()"
+>
+  @if (heading()) {
+    <header class="z-alert__heading z-sys-title-large">{{ heading() }}</header>
+  }
+
+  <div class="z-alert__content">
+    <ng-content />
+  </div>
+</div>
+
+@if (!nonClosable()) {
+  <button
+    class="z-alert__close z-sys-reset"
+    type="button"
+    matRipple
+    [attr.aria-label]="intl.Close"
+    (click)="visible.set(false)"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+}

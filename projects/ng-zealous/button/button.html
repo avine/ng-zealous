@@ -1,0 +1,18 @@
+<div
+  class="z-button__container"
+  [class.z-button__container--vertical]="vertical()"
+  [class.z-button__container--vertical-on-mobile]="verticalOnMobile()"
+  [class.z-button__container--reverse]="reverse()"
+  [style.justify-content]="justifyContent()"
+  [style.text-align]="textAlign()"
+>
+  <ng-content select="[zButtonIcon]" />
+
+  <div
+    class="z-button__label"
+    [class.z-button__label--separator]="separator() && icon() && !reverse()"
+    [class.z-button__label--separator-reverse]="separator() && icon() && reverse()"
+  >
+    <ng-content />
+  </div>
+</div>

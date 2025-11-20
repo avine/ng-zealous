@@ -12,9 +12,7 @@ describe('ZAvatar', () => {
   let icon: WritableSignal<string>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ZAvatar],
-    }).compileComponents();
+    await TestBed.configureTestingModule({}).compileComponents();
 
     photoUrl = signal(undefined);
     name = signal(undefined);

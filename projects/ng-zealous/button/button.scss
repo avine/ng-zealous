@@ -1,0 +1,199 @@
+$space: 0.75rem;
+$line-height: 1.5em;
+
+.z-button {
+  box-sizing: border-box;
+  cursor: pointer;
+  user-select: none;
+
+  display: inline flex;
+  border-radius: var(--z-button-border-radius, 0.5rem);
+  border: 1px solid var(--z-button-border-color, var(--z-button-background-color, transparent));
+  background: var(--z-button-background-color, transparent);
+  color: var(--z-button-color, inherit);
+  padding: calc(var(--z-button-space, $space) / 1.5) var(--z-button-space, $space);
+  line-height: $line-height;
+
+  transition:
+    background-color 100ms ease,
+    color 100ms ease,
+    opacity 100ms ease;
+
+  // It is more of an internal CSS variable used as an alias.
+  --z-button-separator-border: 1px solid
+    var(--z-button-separator-color, rgba(from var(--z-button-color, inherit) r g b / 0.4));
+
+  // Optimized for a rounded appearance when the text fits on a single line.
+  &--rounded {
+    border-radius: 1.375rem;
+  }
+
+  // Use a fully circular appearance, for icon button only.
+  &--rounded:has(&__label:empty) {
+    border-radius: 999px;
+  }
+
+  &:has(&__label:empty) {
+    padding: calc(var(--z-button-space, $space) / 1.5);
+  }
+
+  &__container {
+    min-height: $line-height;
+    min-width: $line-height;
+
+    flex-grow: 1; // As flex item
+    display: flex;
+    align-items: center;
+
+    // Reduce the space because most of the icons do not fully fill their container.
+    gap: calc(var(--z-button-space, $space) / 1.25);
+
+    flex-direction: row;
+
+    &--reverse {
+      flex-direction: row-reverse;
+    }
+
+    &--vertical {
+      flex-direction: column;
+
+      // The gap does not need to be as large as in the "horizontal" case.
+      gap: calc(var(--z-button-space, $space) / 1.75);
+    }
+
+    &--vertical#{& + --reverse} {
+      flex-direction: column-reverse;
+    }
+
+    @media (width < 600px) {
+      &--vertical-on-mobile {
+        flex-direction: column;
+
+        // The gap does not need to be as large as in the "horizontal" case.
+        gap: calc(var(--z-button-space, $space) / 1.75);
+
+        // In this scenario, `justify` and `align` inputs have no effect.
+        justify-content: center !important;
+        text-align: center !important;
+      }
+
+      &--vertical-on-mobile#{& + --reverse} {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+
+  &__label {
+    &:empty {
+      display: none;
+    }
+
+    &--separator {
+      border-left: var(--z-button-separator-border);
+      padding-left: var(--z-button-space, $space);
+    }
+
+    &--separator-reverse {
+      border-right: var(--z-button-separator-border);
+      padding-right: var(--z-button-space, $space);
+    }
+  }
+
+  &__container--vertical &__label {
+    border-width: 0;
+    padding-inline: 0;
+  }
+
+  @media (width < 600px) {
+    &__container--vertical-on-mobile &__label {
+      border-width: 0;
+      padding-inline: 0;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  // ----- filled -----
+  &--filled#{& + --primary} {
+    --z-button-background-color: var(--mat-sys-primary);
+    --z-button-color: var(--mat-sys-on-primary);
+  }
+  &--filled#{& + --secondary} {
+    --z-button-background-color: var(--mat-sys-secondary);
+    --z-button-color: var(--mat-sys-on-secondary);
+  }
+  &--filled#{& + --error} {
+    --z-button-background-color: var(--mat-sys-error);
+    --z-button-color: var(--mat-sys-on-error);
+  }
+
+  // ----- tonal -----
+  &--tonal#{& + --primary} {
+    --z-button-background-color: var(--mat-sys-primary-container);
+    --z-button-color: var(--mat-sys-on-primary-container);
+  }
+  &--tonal#{& + --secondary} {
+    --z-button-background-color: var(--mat-sys-secondary-container);
+    --z-button-color: var(--mat-sys-on-secondary-container);
+  }
+  &--tonal#{& + --error} {
+    --z-button-background-color: var(--mat-sys-error-container);
+    --z-button-color: var(--mat-sys-on-error-container);
+  }
+
+  // ----- outlined -----
+  &--outlined {
+    --z-button-border-color: var(--mat-sys-outline-variant);
+    --z-button-separator-color: var(--mat-sys-outline-variant);
+  }
+  &--outlined#{& + --primary} {
+    --z-button-color: var(--mat-sys-primary);
+  }
+  &--outlined#{& + --secondary} {
+    --z-button-color: var(--mat-sys-secondary);
+  }
+  &--outlined#{& + --error} {
+    --z-button-color: var(--mat-sys-error);
+  }
+}
+
+.z-button-group {
+  display: inline flex;
+
+  .z-button {
+    flex-grow: 1;
+  }
+
+  &--horizontal {
+    .z-button:has(+ .z-button) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right: none;
+    }
+
+    .z-button + .z-button {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-left: var(--z-button-separator-border);
+    }
+  }
+
+  &--vertical {
+    flex-direction: column;
+
+    .z-button:has(+ .z-button) {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      border-bottom: none;
+    }
+
+    .z-button + .z-button {
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+      border-top: var(--z-button-separator-border);
+    }
+  }
+}

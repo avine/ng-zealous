@@ -1,0 +1,28 @@
+<z-demo-container [state]="demoState">
+  <z-alert
+    [heading]="heading()"
+    [type]="demoState.type()"
+    [icon]="demoState.icon()"
+    [nonClosable]="demoState.nonClosable()"
+    [(visible)]="demoState.visible"
+  >
+    @switch (demoState.contentType()) {
+      @case ('textNode') {
+        Lorem ipsum <a href="#" zAlertLink>dolor sit amet</a>.
+      }
+      @case ('divElements') {
+        <div zAlertSection>
+          Lorem ipsum <a href="#" zAlertLink>dolor sit amet</a>, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+          nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </div>
+
+        <div zAlertSection>
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+          laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+          architecto beatae vitae dicta sunt explicabo.
+        </div>
+      }
+    }
+  </z-alert>
+</z-demo-container>

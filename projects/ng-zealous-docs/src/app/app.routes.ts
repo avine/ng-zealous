@@ -9,10 +9,34 @@ export const routes: Routes = [
     data: { icon: 'home' },
   },
   {
+    title: 'Alert',
+    path: 'alert',
+    loadComponent: () => import('./alert/alert'),
+    data: { icon: 'info' },
+  },
+  {
     title: 'Avatar',
     path: 'avatar',
     loadComponent: () => import('./avatar/avatar'),
     data: { icon: 'face' },
+  },
+  {
+    title: 'Burger',
+    path: 'burger',
+    loadComponent: () => import('./burger/burger'),
+    data: { icon: 'lunch_dining' },
+  },
+  {
+    title: 'Button',
+    path: 'button',
+    loadComponent: () => import('./button/button'),
+    data: { icon: 'web_traffic' },
+  },
+  {
+    title: 'Button group',
+    path: 'button-group',
+    loadComponent: () => import('./button-group/button-group'),
+    data: { icon: 'gamepad' },
   },
   {
     title: 'Icon',

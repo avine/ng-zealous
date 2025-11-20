@@ -1,0 +1,62 @@
+<z-demo-container [state]="demoState">
+  <div
+    zButtonGroup
+    [vertical]="demoState.groupVertical()"
+    [style.width]="demoState.groupWidth()"
+    [style.height]="demoState.groupHeight()"
+  >
+    <button
+      [zButton]="demoState.type1()"
+      [color]="demoState.color1()"
+      [rounded]="demoState.rounded()"
+      [separator]="demoState.separator()"
+      [vertical]="demoState.vertical()"
+      [verticalOnMobile]="demoState.verticalOnMobile()"
+      [reverse]="demoState.reverse()"
+      [justifyContent]="demoState.justifyContent()"
+      [textAlign]="demoState.textAlign()"
+      [disabled]="demoState.buttonDisabled()"
+    >
+      @if (demoState.icon1()) {
+        <mat-icon zButtonIcon>{{ demoState.icon1() }}</mat-icon>
+      }
+      @switch (demoState.text1()) {
+        @case ('single-line') {
+          Lorem ipsum dolor sit amet
+        }
+        @case ('multi-line') {
+          Lorem ipsum dolor sit amet<br />
+          incidunt officiis quia blanditiis aspernatur amet
+        }
+      }
+    </button>
+
+    @for (_ of rightButtons(); track $index) {
+      <button
+        [zButton]="demoState.type2()"
+        [color]="demoState.color2()"
+        [rounded]="demoState.rounded()"
+        [separator]="demoState.separator()"
+        [vertical]="demoState.vertical()"
+        [verticalOnMobile]="demoState.verticalOnMobile()"
+        [reverse]="demoState.reverse()"
+        [justifyContent]="demoState.justifyContent()"
+        [textAlign]="demoState.textAlign()"
+        [disabled]="demoState.buttonDisabled()"
+      >
+        @if (demoState.icon2()) {
+          <mat-icon zButtonIcon>{{ demoState.icon2() }}</mat-icon>
+        }
+        @switch (demoState.text2()) {
+          @case ('single-line') {
+            Lorem ipsum dolor
+          }
+          @case ('multi-line') {
+            Lorem ipsum dolor<br />
+            incidunt officiis quia blanditiis aspernatur amet
+          }
+        }
+      </button>
+    }
+  </div>
+</z-demo-container>
