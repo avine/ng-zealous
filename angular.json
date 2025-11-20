@@ -155,6 +155,7 @@
               }
             ],
             "styles": ["projects/ng-zealous-docs/src/styles.scss"],
+            "scripts": ["node_modules/@highlightjs/cdn-assets/highlight.min.js"],
             "server": "projects/ng-zealous-docs/src/main.server.ts",
             "outputMode": "server",
             "ssr": {
@@ -187,6 +188,9 @@
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": {
+            "port": 4300
+          },
           "configurations": {
             "production": {
               "buildTarget": "ng-zealous-docs:build:production"

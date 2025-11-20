@@ -25,6 +25,6 @@ export const appConfig: ApplicationConfig = {
     provideZBaseHref(),
     provideZIcons(),
     provideZTheme(),
-    provideZTitle('ngZealous'),
+    provideZTitle('Starter'),
   ],
 };

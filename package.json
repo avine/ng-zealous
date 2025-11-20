@@ -4,12 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:docs": "ng serve ng-zealous-docs",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:starter": "node dist/starter/server/server.mjs",
-    "format": "prettier --write .",
-    "serve:ssr:ng-zealous-docs": "node dist/ng-zealous-docs/server/server.mjs"
+    "serve:ssr:docs": "node dist/ng-zealous-docs/server/server.mjs",
+    "format": "prettier --write ."
   },
   "prettier": {
     "printWidth": 100,

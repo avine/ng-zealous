@@ -1,0 +1,9 @@
+// CSS HACKS to make Angular Material compatible with CSS Reset libraries, like Tailwind's preflight.
+
+.mat-mdc-icon-button {
+  line-height: 1;
+}
+
+.mdc-notched-outline__notch {
+  border-right-style: none;
+}
