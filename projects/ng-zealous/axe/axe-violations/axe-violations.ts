@@ -28,7 +28,14 @@ import { ZAxeImpactMap } from '../axe-types';
     '[class.z-axe-violations--hidden]': 'hidden',
     role: 'region',
   },
-  imports: [MatBadgeModule, MatButtonModule, MatIconModule, MatTooltipModule, ZIconModule, ZAxeImpactSelector],
+  imports: [
+    MatBadgeModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTooltipModule,
+    ZIconModule,
+    ZAxeImpactSelector,
+  ],
   templateUrl: './axe-violations.html',
   styleUrl: './axe-violations.scss',
   encapsulation: ViewEncapsulation.None,
@@ -98,7 +105,9 @@ export class ZAxeViolations {
     try {
       return {
         ...impacts,
-        ...JSON.parse(this.document.defaultView?.localStorage?.getItem('z-axe-violations-impacts') ?? ''),
+        ...JSON.parse(
+          this.document.defaultView?.localStorage?.getItem('z-axe-violations-impacts') ?? '',
+        ),
       };
     } catch {
       return impacts;
@@ -106,6 +115,9 @@ export class ZAxeViolations {
   }
 
   private storeImpacts(impacts: ZAxeImpactMap) {
-    this.document.defaultView?.localStorage?.setItem('z-axe-violations-impacts', JSON.stringify(impacts));
+    this.document.defaultView?.localStorage?.setItem(
+      'z-axe-violations-impacts',
+      JSON.stringify(impacts),
+    );
   }
 }

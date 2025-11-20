@@ -28,7 +28,11 @@
           {{ violation.description }}
         </button>
 
-        <span [class]="`z-axe-violations__badge z-axe-violations__badge--${violation.impact} z-sys-label-small`">
+        <span
+          [class]="
+            `z-axe-violations__badge z-axe-violations__badge--${violation.impact} z-sys-label-small`
+          "
+        >
           {{ violation.impact }}
         </span>
 

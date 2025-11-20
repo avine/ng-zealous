@@ -41,7 +41,9 @@ export class ZAvatar {
    * The name is automatically transformed into initials.
    * @example "John Doe" becomes "JD"
    */
-  name = input(undefined, { transform: (name?: string) => (name ? _buildInitials(name) : undefined) });
+  name = input(undefined, {
+    transform: (name?: string) => (name ? _buildInitials(name) : undefined),
+  });
 
   /**
    * The icon name to display when neither `photoUrl` nor `name` is provided.
