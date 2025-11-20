@@ -7,6 +7,7 @@
     "declaration": true,
     "declarationMap": true,
     "inlineSources": true,
+    "sourceMap": true, // Added to fix the error: Option 'inlineSources can only be used when either option '--inlineSourceMap' or option '--sourceMap' is provided.ts
     "types": []
   },
   "include": ["**/*.ts"],
