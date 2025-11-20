@@ -3,6 +3,7 @@ import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
 import { enUS, fr } from 'date-fns/locale';
+import { provideZAxe } from 'ng-zealous/axe';
 import { provideZBaseHref } from 'ng-zealous/base-href';
 import { provideDateFns } from 'ng-zealous/date-fns';
 import { provideZIcons } from 'ng-zealous/icon';
@@ -22,6 +23,7 @@ export const appConfig: ApplicationConfig = {
       { localeId: 'fr', locale: fr },
     ]),
 
+    provideZAxe(),
     provideZBaseHref(),
     provideZIcons(),
     provideZTheme(),

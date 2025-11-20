@@ -1,0 +1,71 @@
+@if (visible()) {
+  <section
+    class="z-axe-violations__container"
+    animate.enter="z-axe-violations__container--enter"
+    animate.leave="z-axe-violations__container--leave"
+  >
+    <header class="z-axe-violations__header z-sys-title-large">
+      Accessibility issues
+
+      <button aria-label="Run Axe analysis" type="button" matIconButton (click)="axeRunner.run()">
+        <mat-icon>refresh</mat-icon>
+      </button>
+    </header>
+
+    @let _highlighted = highlighted();
+
+    @for (violation of selectedViolations(); track violation.id) {
+      <article
+        class="z-axe-violations__item z-sys-label-large"
+        [class.z-axe-violations__item--active]="_highlighted?.result === violation"
+      >
+        <button
+          type="button"
+          class="z-axe-violations__reveal z-sys-reset"
+          [class.z-axe-violations__reveal--active]="_highlighted?.result === violation"
+          (click)="toggleHighlighted(violation)"
+        >
+          {{ violation.description }}
+        </button>
+
+        <span [class]="`z-axe-violations__badge z-axe-violations__badge--${violation.impact} z-sys-label-small`">
+          {{ violation.impact }}
+        </span>
+
+        <a
+          class="z-axe-violations__help"
+          [aria-label]="violation.help"
+          [href]="violation.helpUrl"
+          target="_blank"
+          matIconButton
+        >
+          <mat-icon zIcon size="xs">open_in_new</mat-icon>
+        </a>
+      </article>
+    } @empty {
+      <article class="z-axe-violations__item z-axe-violations__item--no-issue z-sys-label-large">
+        <mat-icon>editor_choice</mat-icon>
+        Everything looks good.
+      </article>
+    }
+
+    <z-axe-impact-selector class="z-axe-violations__impacts" [(impacts)]="impacts" />
+  </section>
+}
+
+<div class="z-axe-violations__trigger">
+  @let count = selectedViolations().length;
+
+  <button
+    type="button"
+    class="z-axe-violations__trigger-btn"
+    [class.z-axe-violations__trigger-btn--has-violations]="count"
+    aria-label="Axe panel"
+    matTooltip="Axe panel"
+    matTooltipPosition="left"
+    matIconButton
+    (click)="togggleVisible()"
+  >
+    <mat-icon [matBadge]="count || null" matBadgeOverlap="false">accessibility_new</mat-icon>
+  </button>
+</div>
