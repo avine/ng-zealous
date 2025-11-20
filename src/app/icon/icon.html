@@ -1,0 +1,16 @@
+<z-demo-container [state]="demoState">
+  Before
+  <mat-icon
+    zIcon
+    [pull]="demoState.pull()"
+    [size]="demoState.size()"
+    [fill]="demoState.fill()"
+    [fillDuration]="demoState.fillDuration()"
+    [animation]="demoState.animation()"
+    [animationDuration]="demoState.animationDuration()"
+    [maxIterations]="demoState.maxIterations()"
+  >
+    {{ demoState.icon() }}
+  </mat-icon>
+  After
+</z-demo-container>

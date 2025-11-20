@@ -1,17 +1,12 @@
-<div style="padding: 1.5rem; text-align: center">
-  <h1 style="margin: 0">Starter</h1>
+<div style="padding: 1.5rem">
+  <nav style="margin-bottom: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem">
+    @for (route of routes; track $index) {
+      <a matButton="text" [routerLink]="`/${route.path}`">
+        <mat-icon>{{ route.data?.['icon'] }}</mat-icon>
+        {{ route.title }}
+      </a>
+    }
+  </nav>
 
-  <p style="margin: 1.5rem 0 0 0">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus possimus sint sequi ab,
-    tempora nihil dicta recusandae molestias assumenda dolor? Vel cumque soluta, ad voluptatibus
-    cupiditate non ea sed voluptates?
-  </p>
-
-  <p style="margin: 1.5rem 0 0 0">
-    <button matButton="tonal">
-      <mat-icon zIcon animation="spin" animationDuration="2s">settings</mat-icon> Settings
-    </button>
-  </p>
+  <router-outlet />
 </div>
-
-<router-outlet />

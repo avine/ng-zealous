@@ -1,0 +1,18 @@
+<z-demo-container [state]="demoState">
+  <div
+    style="
+      border-radius: 0.5rem;
+      border: 2px dashed var(--mat-sys-outline-variant);
+      padding: 1rem 1.5rem;
+    "
+  >
+    @switch (demoState.use()) {
+      @case ('Component') {
+        <z-markdown [content]="content" />
+      }
+      @case ('Pipe') {
+        <div class="z-sys-pretty" [innerHTML]="content | zMarkdown"></div>
+      }
+    }
+  </div>
+</z-demo-container>

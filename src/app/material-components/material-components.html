@@ -1,0 +1,95 @@
+<z-demo-title />
+
+<div class="app-material-components__row">
+  <button matButton>Button</button>
+  <button matIconButton><mat-icon>home</mat-icon></button>
+  <button matFab><mat-icon>home</mat-icon></button>
+  <button matButton="tonal"><mat-icon>home</mat-icon> Button</button>
+  <button matButton="filled"><mat-icon>home</mat-icon> Button</button>
+  <button matButton="elevated">Button</button>
+  <button matButton="outlined">Button</button>
+</div>
+
+<div class="app-material-components__row">
+  <button matButton matBadge="4">Button</button>
+  <button matIconButton matBadge="4"><mat-icon>home</mat-icon></button>
+  <button matFab matBadge="4"><mat-icon>home</mat-icon></button>
+  <button matButton="tonal" matBadge="4"><mat-icon>home</mat-icon> Button</button>
+  <button matButton="filled" matBadge="4"><mat-icon>home</mat-icon> Button</button>
+  <button matButton="elevated" matBadge="4">Button</button>
+  <button matButton="outlined" matBadge="4">Button</button>
+</div>
+
+<div class="app-material-components__row">
+  <button disabled matButton>Button</button>
+  <button disabled matIconButton><mat-icon>home</mat-icon></button>
+  <button disabled matFab><mat-icon>home</mat-icon></button>
+  <button disabled matButton="tonal">Button</button>
+  <button disabled matButton="filled">Button</button>
+  <button disabled matButton="elevated">Button</button>
+  <button disabled matButton="outlined">Button</button>
+</div>
+
+<div class="app-material-components__row">
+  <mat-form-field appearance="fill">
+    <mat-label>Fill form field</mat-label>
+    <input [formControl]="formControl1" matInput placeholder="Placeholder" />
+    <mat-icon matSuffix>alternate_email</mat-icon>
+    <mat-hint>Hint</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Outline form field</mat-label>
+    <input [formControl]="formControl2" matInput placeholder="Placeholder" />
+    <mat-icon matSuffix>lock</mat-icon>
+    <mat-hint>Hint</mat-hint>
+    <mat-error>Field required</mat-error>
+  </mat-form-field>
+</div>
+
+<div class="app-material-components__row">
+  <mat-radio-group aria-label="Select an option">
+    <mat-radio-button value="1" checked>Radio 1</mat-radio-button>
+    <mat-radio-button value="2">Radio 2</mat-radio-button>
+    <mat-radio-button value="3" disabled>Radio 3</mat-radio-button>
+  </mat-radio-group>
+
+  <mat-checkbox checked>Check 1</mat-checkbox>
+  <mat-checkbox>Check 2</mat-checkbox>
+  <mat-checkbox disabled>Check 3</mat-checkbox>
+</div>
+
+<div class="app-material-components__row">
+  <mat-slide-toggle checked>Slide toggle</mat-slide-toggle>
+  <mat-slide-toggle>Slide toggle</mat-slide-toggle>
+  <mat-slide-toggle disabled>Slide toggle</mat-slide-toggle>
+</div>
+
+<div class="app-material-components__row app-material-components__row--nowrap">
+  <mat-progress-bar mode="determinate" value="40" />
+  <mat-progress-bar mode="indeterminate" />
+</div>
+
+<div class="app-material-components__row">
+  <mat-tab-group [animationDuration]="0" style="width: 100%">
+    <mat-tab label="First"></mat-tab>
+    <mat-tab label="Second"></mat-tab>
+    <mat-tab label="Third"></mat-tab>
+  </mat-tab-group>
+</div>
+
+<div class="app-material-components__row">
+  <mat-paginator
+    [length]="100"
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    aria-label="Select page"
+  />
+
+  <mat-form-field>
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" />
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</div>

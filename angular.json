@@ -31,6 +31,7 @@
               }
             ],
             "styles": ["src/styles.scss"],
+            "scripts": ["node_modules/@highlightjs/cdn-assets/highlight.min.js"],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
