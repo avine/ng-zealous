@@ -17,6 +17,9 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en"
+      },
       "architect": {
         "build": {
           "builder": "@angular/build:application",
@@ -35,7 +38,8 @@
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
-            }
+            },
+            "polyfills": ["@angular/localize/init"]
           },
           "configurations": {
             "production": {
@@ -141,6 +145,9 @@
       "root": "projects/ng-zealous-docs",
       "sourceRoot": "projects/ng-zealous-docs/src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en"
+      },
       "architect": {
         "build": {
           "builder": "@angular/build:application",
@@ -163,7 +170,8 @@
             "outputMode": "server",
             "ssr": {
               "entry": "projects/ng-zealous-docs/src/server.ts"
-            }
+            },
+            "polyfills": ["@angular/localize/init"]
           },
           "configurations": {
             "production": {
