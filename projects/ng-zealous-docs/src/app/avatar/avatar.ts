@@ -2,6 +2,7 @@ import { Component, computed, ViewEncapsulation } from '@angular/core';
 import { ZAvatarModule } from 'ng-zealous/avatar';
 import { ZDemoModule, zDemoProp } from 'ng-zealous/demo';
 import { PHOTO_URL_MOCK } from './avatar-data';
+import docMarkdown from './avatar.md' with { loader: 'text' };
 
 @Component({
   selector: 'app-avatar',
@@ -10,6 +11,8 @@ import { PHOTO_URL_MOCK } from './avatar-data';
   encapsulation: ViewEncapsulation.None,
 })
 export default class Avatar {
+  protected docMarkdown = docMarkdown;
+
   protected demoState = {
     fontSize: zDemoProp([undefined, '1.75rem', '2.5rem'], { defaultValue: '1.75rem' }),
 
