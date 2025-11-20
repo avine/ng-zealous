@@ -1,0 +1,7 @@
+@for (lorem of lorems(); track $index) {
+  @if (noTag()) {
+    {{ lorem }}
+  } @else {
+    <p>{{ lorem }}</p>
+  }
+}

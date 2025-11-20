@@ -1,0 +1,139 @@
+.z-demo-state-form {
+  $toggle-size: 2.5rem;
+  $content-width: 320px;
+
+  display: none; // The component template is rendered inside an Overlay.
+
+  &__anim {
+    &--enter {
+      animation: zDemoStateFormAnimEnter 250ms ease;
+    }
+    &--leave {
+      animation: zDemoStateFormAnimLeave 250ms ease;
+    }
+  }
+
+  &__overlay {
+    position: fixed;
+    z-index: 99999;
+    right: 0;
+    width: 0;
+    height: 100vh;
+    align-content: center;
+
+    &--hidden {
+      display: none; // Usefull for e2e tests to hide the toggle button entirely and take snapshots with Playwright.
+    }
+  }
+
+  &__toggle {
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 2;
+    top: calc(50% - $toggle-size / 2);
+    left: calc(-#{$content-width} - $toggle-size + 1px);
+    transition: left 250ms ease;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: $toggle-size;
+    height: $toggle-size;
+    border-radius: 0.5rem 0 0 0.5rem;
+    border: 1px solid var(--mat-sys-outline-variant);
+    border-right-width: 0;
+    background-color: var(--mat-sys-surface-container-low);
+
+    &--closed {
+      left: calc(-#{$toggle-size} + 1px);
+    }
+  }
+
+  &__content {
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    width: $content-width;
+    left: -#{$content-width};
+    min-height: 200px;
+    max-height: 75vh;
+    overflow: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 1rem 1rem 1rem;
+    border-radius: 0.5rem 0 0 0.5rem;
+    border: 1px solid var(--mat-sys-outline-variant);
+    border-right-width: 0;
+    background-color: var(--mat-sys-surface-container-low);
+  }
+
+  &__header {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    margin-inline: -1rem;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--mat-sys-outline-variant);
+    background-color: var(--mat-sys-surface);
+  }
+
+  &__heading {
+    position: relative;
+    display: flex;
+    justify-content: end;
+
+    &:not(&--first) {
+      margin-top: 1rem;
+    }
+
+    > * {
+      box-sizing: border-box;
+      margin-inline: 1.5rem;
+      padding-inline: 0.5rem;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-wrap: nowrap;
+      background-color: var(--mat-sys-surface-container-low);
+      color: var(--mat-sys-secondary);
+      font-style: italic;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      left: 0;
+      right: 0;
+      border-bottom: 1px solid var(--mat-sys-outline-variant);
+    }
+  }
+
+  &__field {
+    width: 100%;
+
+    // Hack: remove large space below `<mat-form-field>`
+    .mat-mdc-form-field-bottom-align {
+      display: none !important;
+    }
+  }
+
+  &__value {
+    word-break: break-word;
+  }
+}
+
+@keyframes zDemoStateFormAnimEnter {
+  from {
+    left: 0;
+  }
+}
+@keyframes zDemoStateFormAnimLeave {
+  to {
+    left: 0;
+  }
+}

@@ -1,0 +1,14 @@
+.z-demo-container {
+  &__icon {
+    margin-inline-end: 0.5rem;
+  }
+
+  &__tab {
+    margin-top: 1rem;
+    padding-block: 1.5rem;
+  }
+
+  &__demo {
+    padding-inline: 1.5rem;
+  }
+}

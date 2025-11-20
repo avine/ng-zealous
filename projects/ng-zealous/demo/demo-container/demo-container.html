@@ -1,0 +1,43 @@
+<z-demo-title />
+
+@if (selectedTabIndex() === 0) {
+  <z-demo-state-form [(state)]="state" />
+}
+
+@if (docMarkdownWithoutHeading()) {
+  <mat-tab-group
+    mat-stretch-tabs="false"
+    animationDuration="0ms"
+    [(selectedIndex)]="selectedTabIndex"
+  >
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon zIcon [fill]="selectedTabIndex() === 0" class="z-demo-container__icon">
+          category_search
+        </mat-icon>
+        Demo
+      </ng-template>
+
+      <div class="z-demo-container__tab z-demo-container__demo" id="z-demo-container">
+        <ng-container *ngTemplateOutlet="contentTmpl" />
+      </div>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon zIcon [fill]="selectedTabIndex() === 1" class="z-demo-container__icon">
+          developer_guide
+        </mat-icon>
+        Documentation
+      </ng-template>
+
+      <z-markdown class="z-demo-container__tab" [content]="docMarkdownWithoutHeading()" />
+    </mat-tab>
+  </mat-tab-group>
+} @else {
+  <div class="z-demo-container__demo" id="z-demo-container">
+    <ng-container *ngTemplateOutlet="contentTmpl" />
+  </div>
+}
+
+<ng-template #contentTmpl><ng-content /></ng-template>

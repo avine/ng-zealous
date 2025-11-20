@@ -1,0 +1,69 @@
+<ng-template>
+  <aside
+    aria-label="Demo state form"
+    class="z-demo-state-form__overlay"
+    [class.z-demo-state-form__overlay--hidden]="hidden"
+  >
+    <button
+      type="button"
+      aria-label="Toggle demo state form"
+      class="z-demo-state-form__toggle z-sys-reset"
+      [class.z-demo-state-form__toggle--closed]="!visible()"
+      animate.enter="z-demo-state-form__anim--enter"
+      (click)="toggleVisible()"
+    >
+      <mat-icon>settings</mat-icon>
+    </button>
+
+    @if (visible()) {
+      <div
+        class="z-demo-state-form__content"
+        animate.enter="z-demo-state-form__anim--enter"
+        animate.leave="z-demo-state-form__anim--leave"
+      >
+        <header class="z-demo-state-form__header z-sys-title-large">Demo state settings</header>
+
+        @for (prop of props(); track prop) {
+          @let demoState = state()[prop];
+
+          @if (demoState.config.withHeading) {
+            <div
+              class="z-demo-state-form__heading"
+              [class.z-demo-state-form__heading--first]="$first"
+            >
+              <span class="z-sys-title-medium">{{ demoState.config.withHeading }}</span>
+            </div>
+          }
+
+          @if (demoState.values | ofTypeBoolean) {
+            <mat-slide-toggle [checked]="demoState()" (change)="demoState.next()">
+              {{ prop }}
+            </mat-slide-toggle>
+          } @else if (demoState.values.length) {
+            <mat-form-field appearance="outline" class="z-demo-state-form__field">
+              <mat-label>{{ prop }}</mat-label>
+
+              <mat-select
+                [value]="demoState()"
+                (valueChange)="demoState.set($event)"
+                canSelectNullableOptions
+              >
+                @for (value of demoState.values; track $index) {
+                  <mat-option [value]="value">
+                    @if (value === undefined || value === null) {
+                      <i>{{ value + '' }}</i>
+                    } @else if (value === '') {
+                      <i>empty string</i>
+                    } @else {
+                      <span class="z-demo-state-form__value">{{ value | stateValue }}</span>
+                    }
+                  </mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
+          }
+        }
+      </div>
+    }
+  </aside>
+</ng-template>
