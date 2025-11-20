@@ -1,0 +1,35 @@
+.z-avatar {
+  vertical-align: middle;
+  flex-shrink: 0; // Useful when used as a flex item
+
+  display: inline flex;
+  justify-content: center;
+  align-items: center;
+
+  user-select: none;
+  overflow: hidden;
+  border-radius: 50%;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  background-color: var(--mat-sys-on-surface);
+  color: var(--mat-sys-surface);
+
+  line-height: 1em;
+  font-weight: bolder;
+  font-size: 1.25rem;
+  width: 1.8em;
+  height: 1.8em;
+
+  &__icon {
+    font-size: 1.2em; // You can adjust the icon-size relative to text-size
+    width: 1em !important;
+    height: 1em !important;
+  }
+
+  &__initials {
+    position: relative;
+  }
+}

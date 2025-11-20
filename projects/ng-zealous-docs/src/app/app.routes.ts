@@ -9,6 +9,12 @@ export const routes: Routes = [
     data: { icon: 'home' },
   },
   {
+    title: 'Avatar',
+    path: 'avatar',
+    loadComponent: () => import('./avatar/avatar'),
+    data: { icon: 'face' },
+  },
+  {
     title: 'Icon',
     path: 'icon',
     loadComponent: () => import('./icon/icon'),

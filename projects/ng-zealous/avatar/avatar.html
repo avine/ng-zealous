@@ -1,0 +1,7 @@
+@if (!photoUrl()) {
+  @if (name(); as initials) {
+    <span class="z-avatar__initials">{{ initials }}</span>
+  } @else {
+    <mat-icon class="z-avatar__icon">{{ icon() }}</mat-icon>
+  }
+}
