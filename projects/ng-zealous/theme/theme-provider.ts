@@ -1,4 +1,5 @@
-import { inject, provideAppInitializer } from '@angular/core';
+import { inject, provideEnvironmentInitializer } from '@angular/core';
 import { ZThemeService } from './theme-service';
 
-export const provideZTheme = () => provideAppInitializer(() => inject(ZThemeService).init());
+export const provideZTheme = () =>
+  provideEnvironmentInitializer(() => inject(ZThemeService).init());
