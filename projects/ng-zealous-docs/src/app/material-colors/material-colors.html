@@ -30,7 +30,7 @@
 </div>
 
 @for (colors of materialColorsMapFiltered(); track colors.heading) {
-  <h3 class="app-material-colors__heading">{{ colors.heading }}</h3>
+  <h2 class="app-material-colors__heading">{{ colors.heading }}</h2>
 
   <div class="app-material-colors__content">
     @for (role of colors.roles; track role; let last = $last) {
