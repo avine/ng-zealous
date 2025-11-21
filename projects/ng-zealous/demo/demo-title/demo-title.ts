@@ -7,8 +7,8 @@ import { ZIconModule } from 'ng-zealous/icon';
   selector: 'z-demo-title',
   host: {
     class: 'z-demo-title z-sys-headline-large',
-    '[attr.role]': '"heading"',
-    '[attr.aria-level]': '"2"',
+    role: 'heading',
+    'aria-level': '1',
   },
   imports: [MatIconModule, ZIconModule],
   templateUrl: './demo-title.html',
