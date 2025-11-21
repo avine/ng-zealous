@@ -21,6 +21,12 @@ export const routes: Routes = [
     data: { icon: 'face' },
   },
   {
+    title: 'Breakpoint',
+    path: 'breakpoint',
+    loadComponent: () => import('./breakpoint/breakpoint'),
+    data: { icon: 'fit_width' },
+  },
+  {
     title: 'Burger',
     path: 'burger',
     loadComponent: () => import('./burger/burger'),
@@ -61,5 +67,11 @@ export const routes: Routes = [
     path: 'material-components',
     loadComponent: () => import('./material-components/material-components'),
     data: { icon: 'widgets' },
+  },
+  {
+    title: 'Pretty',
+    path: 'pretty',
+    loadComponent: () => import('./pretty/pretty'),
+    data: { icon: 'code' },
   },
 ];

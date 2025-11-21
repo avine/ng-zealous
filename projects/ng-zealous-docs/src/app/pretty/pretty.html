@@ -1,0 +1,126 @@
+<z-demo-container [state]="demoState">
+  <h2 class="z-sys-headline-small">
+    Using a wrapper element with <code class="z-sys-pretty">z-sys-pretty</code> CSS class
+  </h2>
+
+  <div [class.z-sys-pretty]="demoState.pretty()">
+    <h1>H1. Lorem ipsum dolor</h1>
+    <h2>H2. Lorem ipsum dolor</h2>
+    <h3>H3. Lorem ipsum dolor</h3>
+    <h4>H4. Lorem ipsum dolor</h4>
+    <h5>H5. Lorem ipsum dolor</h5>
+    <h6>H6. Lorem ipsum dolor</h6>
+
+    <hr />
+
+    <p>P. Lorem ipsum dolor</p>
+    <p>P. Lorem ipsum dolor</p>
+    <p>P. Lorem ipsum dolor</p>
+
+    <hr />
+
+    <p>
+      <strong>STRONG. Lorem ipsum dolor</strong>
+      <br />
+      <em>EM. Lorem ipsum dolor</em>
+    </p>
+
+    <hr />
+
+    <ul>
+      <li>UL. Lorem ipsum dolor</li>
+      <li>
+        UL. Lorem ipsum dolor
+        <ul>
+          <li>UL. Lorem ipsum dolor</li>
+          <li>UL. Lorem ipsum dolor</li>
+          <li>UL. Lorem ipsum dolor</li>
+        </ul>
+      </li>
+      <li>UL. Lorem ipsum dolor</li>
+    </ul>
+
+    <hr />
+
+    <ol>
+      <li>OL. Lorem ipsum dolor</li>
+      <li>
+        OL. Lorem ipsum dolor
+        <ol>
+          <li>OL. Lorem ipsum dolor</li>
+          <li>OL. Lorem ipsum dolor</li>
+          <li>OL. Lorem ipsum dolor</li>
+        </ol>
+      </li>
+      <li>OL. Lorem ipsum dolor</li>
+    </ol>
+
+    <hr />
+
+    <p>
+      <a href="#">LINK. Lorem ipsum dolor</a>
+    </p>
+
+    <hr />
+
+    <p>
+      <input name="Input" aria-label="Input" value="INPUT. Lorem ipsum dolor" />
+      <br />
+      <button>BUTTON. Lorem ipsum dolor</button>
+    </p>
+
+    <hr />
+
+    <p><code>CODE. Lorem ipsum dolor</code></p>
+
+    <pre><code>PRE > CODE. Lorem ipsum dolor
+PRE > CODE. Lorem ipsum dolor</code></pre>
+  </div>
+
+  <br />
+
+  <h2 class="z-sys-headline-small">
+    Using <code class="z-sys-pretty">z-sys-pretty</code> CSS class on the targeted element directly
+  </h2>
+
+  <a [class.z-sys-pretty]="demoState.pretty()" href="#">LINK. Lorem ipsum dolor</a>
+
+  <hr />
+
+  <ul [class.z-sys-pretty]="demoState.pretty()">
+    <li>UL. Lorem ipsum dolor</li>
+    <li>
+      UL. Lorem ipsum dolor
+      <ul>
+        <li>UL. Lorem ipsum dolor</li>
+        <li>UL. Lorem ipsum dolor</li>
+        <li>UL. Lorem ipsum dolor</li>
+      </ul>
+    </li>
+    <li>UL. Lorem ipsum dolor</li>
+  </ul>
+
+  <hr />
+
+  <ol [class.z-sys-pretty]="demoState.pretty()">
+    <li>OL. Lorem ipsum dolor</li>
+    <li>
+      OL. Lorem ipsum dolor
+      <ol>
+        <li>OL. Lorem ipsum dolor</li>
+        <li>OL. Lorem ipsum dolor</li>
+        <li>OL. Lorem ipsum dolor</li>
+      </ol>
+    </li>
+    <li>OL. Lorem ipsum dolor</li>
+  </ol>
+
+  <hr />
+
+  <code [class.z-sys-pretty]="demoState.pretty()">CODE. Lorem ipsum dolor</code>
+
+  <hr />
+
+  <pre [class.z-sys-pretty]="demoState.pretty()"><code>PRE > CODE. Lorem ipsum dolor
+PRE > CODE. Lorem ipsum dolor</code></pre>
+</z-demo-container>
