@@ -49,22 +49,50 @@ export default class MaterialColors {
   protected displayHexColor = true;
 
   // Learn more about Material color roles:
-  //    - https://material.angular.io/guide/system-variables
+  //    - https://material.angular.dev/guide/theming-your-components
   //    - https://m3.material.io/styles/color/roles
   protected materialColorsMap: MaterialColorsMap[] = [
     {
       heading: 'Primary',
-      roles: ['primary', 'on-primary', 'primary-container', 'on-primary-container'],
+      roles: [
+        'primary',
+        'on-primary',
+        'primary-container',
+        'on-primary-container',
+        'primary-fixed',
+        'on-primary-fixed',
+        'on-primary-fixed-variant',
+        'primary-fixed-dim',
+        'inverse-primary',
+      ],
     },
 
     {
       heading: 'Secondary',
-      roles: ['secondary', 'on-secondary', 'secondary-container', 'on-secondary-container'],
+      roles: [
+        'secondary',
+        'on-secondary',
+        'secondary-container',
+        'on-secondary-container',
+        'secondary-fixed',
+        'on-secondary-fixed',
+        'on-secondary-fixed-variant',
+        'secondary-fixed-dim',
+      ],
     },
 
     {
       heading: 'Tertiary',
-      roles: ['tertiary', 'on-tertiary', 'tertiary-container', 'on-tertiary-container'],
+      roles: [
+        'tertiary',
+        'on-tertiary',
+        'tertiary-container',
+        'on-tertiary-container',
+        'tertiary-fixed',
+        'on-tertiary-fixed',
+        'on-tertiary-fixed-variant',
+        'tertiary-fixed-dim',
+      ],
     },
 
     {
@@ -73,67 +101,35 @@ export default class MaterialColors {
     },
 
     {
-      heading: 'Outline',
-      roles: ['outline', 'outline-variant'],
-    },
-
-    {
       heading: 'Surface',
       roles: [
-        // 'background', // Same as 'surface'
-        // 'on-background', // Same as 'on-surface'
-
         'surface',
         'on-surface',
-
-        'surface-variant',
         'on-surface-variant',
-
-        'surface-container-lowest',
-        'surface-container-low',
+        'surface-bright',
         'surface-container',
         'surface-container-high',
         'surface-container-highest',
+        'surface-container-low',
+        'surface-container-lowest',
         'surface-dim',
-        'surface-bright',
         'surface-tint',
+        'surface-variant',
+        'inverse-surface',
+        'inverse-on-surface',
       ],
-    },
-
-    {
-      heading: 'Primary fixed',
-      roles: ['primary-fixed', 'primary-fixed-dim', 'on-primary-fixed', 'on-primary-fixed-variant'],
-    },
-
-    {
-      heading: 'Secondary fixed',
-      roles: [
-        'secondary-fixed',
-        'secondary-fixed-dim',
-        'on-secondary-fixed',
-        'on-secondary-fixed-variant',
-      ],
-    },
-
-    {
-      heading: 'Tertiary fixed',
-      roles: [
-        'tertiary-fixed',
-        'tertiary-fixed-dim',
-        'on-tertiary-fixed',
-        'on-tertiary-fixed-variant',
-      ],
-    },
-
-    {
-      heading: 'Inverse',
-      roles: ['inverse-primary', 'inverse-surface', 'inverse-on-surface'],
     },
 
     {
       heading: 'Miscellaneous',
       roles: [
-        // 'scrim', // Same as shadow
+        'background',
+        'on-background',
+        'neutral-variant20',
+        'neutral10',
+        'outline',
+        'outline-variant',
+        'scrim',
         'shadow',
       ],
     },
