@@ -25,7 +25,7 @@ export const appConfig: ApplicationConfig = {
 
     provideZAxe(),
     provideZBaseHref(),
-    provideZIcons(),
+    provideZIcons('material-symbols-outlined'),
     provideZTheme(),
     provideZTitle('NgZealous Docs'),
   ],

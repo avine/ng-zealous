@@ -3,7 +3,13 @@
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^21.0.0",
-    "@angular/core": "^21.0.0"
+    "@angular/core": "^21.0.0",
+    "@angular/material": "^21.0.0",
+    "@angular/material-date-fns-adapter": "^21.0.0",
+    "axe-core": "^4.11.0",
+    "date-fns": "^4.1.0",
+    "highlight.js": "^11.11.1",
+    "marked": "^17.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"

@@ -10,6 +10,7 @@
     "start:docs": "ng serve ng-zealous-docs",
     "build:docs": "ng build ng-zealous-docs",
     "serve:ssr:docs": "node dist/ng-zealous-docs/server/server.mjs",
+    "prebuild:lib": "pnpm --dir scripts/update-ng-zealous-peer-deps start",
     "build:lib": "ng build ng-zealous",
     "test:lib": "ng test ng-zealous",
     "e2e": "playwright test",

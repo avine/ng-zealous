@@ -1,9 +1,10 @@
 import { inject, provideAppInitializer } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
+import { ZIconFontSetClass } from './icon-types';
 
-export const provideZIcons = () =>
+export const provideZIcons = (fontSetClass: ZIconFontSetClass) =>
   provideAppInitializer(() => {
-    // Set font class according to the NPM package installed: "@material-symbols/font-500"
+    // Set font class according to the NPM package installed: "@material-symbols/font-*"
     // Values: 'material-symbols-outlined', 'material-symbols-rounded' or 'material-symbols-sharp'.
     //
     // See: https://fonts.google.com/icons
@@ -15,7 +16,7 @@ export const provideZIcons = () =>
 
     const customFontSetClass = defaultFontSetClass
       .filter((fontSetClass) => fontSetClass !== 'material-icons') // Remove default...
-      .concat(['material-symbols-outlined']); // ...and add custom
+      .concat([fontSetClass]); // ...and add custom
 
     matIconRegistry.setDefaultFontSetClass(...customFontSetClass);
   });

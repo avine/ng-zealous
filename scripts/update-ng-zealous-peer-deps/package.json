@@ -1,0 +1,14 @@
+{
+  "name": "update-ng-zealous-peer-deps",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "node index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  }
+}

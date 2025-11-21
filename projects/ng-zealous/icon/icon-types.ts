@@ -1,3 +1,8 @@
+export type ZIconFontSetClass =
+  | 'material-symbols-outlined'
+  | 'material-symbols-rounded'
+  | 'material-symbols-sharp';
+
 export type ZIconPull = 'none' | 'left' | 'right';
 
 export type ZIconSize =
