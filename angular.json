@@ -2,7 +2,8 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "pnpm"
+    "packageManager": "pnpm",
+    "schematicCollections": ["angular-eslint"]
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -80,6 +81,12 @@
         },
         "test": {
           "builder": "@angular/build:unit-test"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+          }
         }
       }
     },
@@ -130,6 +137,13 @@
           "builder": "@angular/build:unit-test",
           "options": {
             "tsConfig": "projects/ng-zealous/tsconfig.spec.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["projects/ng-zealous/**/*.ts", "projects/ng-zealous/**/*.html"],
+            "eslintConfig": "projects/ng-zealous/eslint.config.js"
           }
         }
       }
@@ -214,6 +228,16 @@
         },
         "test": {
           "builder": "@angular/build:unit-test"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/ng-zealous-docs/**/*.ts",
+              "projects/ng-zealous-docs/**/*.html"
+            ],
+            "eslintConfig": "projects/ng-zealous-docs/eslint.config.js"
+          }
         }
       }
     }

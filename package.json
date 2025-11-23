@@ -14,7 +14,8 @@
     "build:lib": "ng build ng-zealous",
     "test:lib": "ng test ng-zealous",
     "e2e": "playwright test",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "lint": "ng lint --fix"
   },
   "prettier": {
     "printWidth": 100,
@@ -59,18 +60,24 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@angular-eslint/builder": "^21.0.1",
     "@angular/build": "^21.0.0",
     "@angular/cli": "^21.0.0",
     "@angular/compiler-cli": "^21.0.0",
     "@angular/localize": "^21.0.0",
+    "@eslint/js": "^9.39.1",
     "@playwright/test": "^1.56.1",
     "@types/express": "^5.0.1",
     "@types/node": "^20.17.19",
+    "angular-eslint": "^21.0.1",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
     "jsdom": "^27.1.0",
     "ng-packagr": "^21.0.0",
     "prettier": "^3.6.2",
     "prettier-plugin-organize-imports": "^4.3.0",
     "typescript": "~5.9.2",
+    "typescript-eslint": "^8.46.4",
     "vitest": "^4.0.8"
   }
 }
