@@ -10,6 +10,7 @@ import {
 import { MatRippleModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { ZIconModule } from 'ng-zealous/icon';
+import { mergeClasses } from 'ng-zealous/utils';
 import { ZAlertIntl } from './alert-intl';
 import { ZAlertType } from './alert-types';
 
@@ -73,7 +74,7 @@ export class ZAlert {
   heading = input<string>();
 
   /**
-   * Whether the alert can be closed by the user.
+   * Whether the alert can not be closed by the user.
    * @default false
    */
   nonClosable = input(false, { transform: booleanAttribute });
@@ -89,9 +90,7 @@ export class ZAlert {
    * Computed classes for the host element based on type and visibility.
    */
   protected hostClass = computed(() =>
-    ['z-alert', `z-alert--${this.type()}`]
-      .concat(!this.visible() ? 'z-alert--hidden' : [])
-      .join(' '),
+    mergeClasses('z-alert', `z-alert--${this.type()}`, !this.visible() && 'z-alert--hidden'),
   );
 
   /**

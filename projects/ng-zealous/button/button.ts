@@ -8,6 +8,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { MatRipple } from '@angular/material/core';
+import { mergeClasses } from 'ng-zealous/utils';
 import { ZButtonIcon } from './button-icon';
 import { ZButtonColor, ZButtonJustifyContent, ZButtonTextAlign, ZButtonType } from './button-types';
 
@@ -208,12 +209,15 @@ export class ZButton {
   // Computed button type, prioritizing `type` input over `typeAlias`.
   private computedType = computed(() => this.type() ?? this.typeAlias());
 
-  protected hostClass = computed(() => {
-    const type = this.computedType();
-    return ['z-sys-reset', 'z-button', `z-button--${this.color()}`]
-      .concat(type ? [`z-button--${type}`] : [], this.rounded() ? [`z-button--rounded`] : [])
-      .join(' ');
-  });
+  protected hostClass = computed(() =>
+    mergeClasses(
+      'z-sys-reset',
+      'z-button',
+      `z-button--${this.color()}`,
+      this.computedType() && `z-button--${this.computedType()}`,
+      this.rounded() && `z-button--rounded`,
+    ),
+  );
 
   // This method is called on keyboard interactions (Enter and Space keys).
   protected launchRipple() {
