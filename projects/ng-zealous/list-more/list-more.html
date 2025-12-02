@@ -1,0 +1,37 @@
+@let _splitIndex = splitIndex();
+@let _items = items();
+
+@for (item of _items; track $index) {
+  @if ($index === _splitIndex) {
+    <button
+      type="button"
+      class="z-list-more__toggle z-sys-reset z-sys-title-small"
+      [class.z-list-more__toggle--opened]="showMore()"
+      (click)="toggleShowMore()"
+    >
+      {{ moreHeading() }}
+
+      <mat-icon
+        class="z-list-more__chevron"
+        [class.z-list-more__chevron--opened]="showMore()"
+        [style.--z-list-more-chevron-delay]="_items.length - _splitIndex"
+      >
+        keyboard_arrow_down
+      </mat-icon>
+    </button>
+  }
+
+  @let isMoreContent = $index >= _splitIndex;
+
+  @if ($index < _splitIndex || showMore()) {
+    <div
+      class="z-list-more__content"
+      [style.--z-list-more-enter-index]="isMoreContent ? $index - _splitIndex : undefined"
+      [style.--z-list-more-leave-index]="isMoreContent ? _items.length - 1 - $index : undefined"
+      [animate.enter]="isMoreContent ? 'z-list-more__content--enter' : undefined"
+      [animate.leave]="isMoreContent ? 'z-list-more__content--leave' : undefined"
+    >
+      <ng-container [ngTemplateOutlet]="item.templateRef" />
+    </div>
+  }
+}

@@ -51,6 +51,12 @@ export const routes: Routes = [
     data: { icon: 'rocket' },
   },
   {
+    title: 'List more',
+    path: 'list-more',
+    loadComponent: () => import('./list-more/list-more'),
+    data: { icon: 'read_more' },
+  },
+  {
     title: 'Markdown',
     path: 'markdown',
     loadComponent: () => import('./markdown/markdown'),

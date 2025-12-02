@@ -1,0 +1,9 @@
+.app-list-more {
+  &__card {
+    display: block !important;
+    border-radius: 0.5rem;
+    border: 1px solid var(--mat-sys-outline-variant);
+    background-color: var(--mat-sys-surface-container-low);
+    padding: 1.25rem 1.5rem;
+  }
+}

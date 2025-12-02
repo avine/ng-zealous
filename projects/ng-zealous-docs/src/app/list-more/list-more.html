@@ -1,0 +1,24 @@
+<z-demo-container [state]="demoState">
+  <z-list-more
+    [moreIndex]="demoState.moreIndex()"
+    moreHeading="List more"
+    [style.--z-list-more-margin]="demoState.margin()"
+    [style.--z-list-more-toggle-indent]="demoState.toggleIndent()"
+  >
+    <ng-template zListMoreItem>
+      <z-demo-lorem class="app-list-more__card" count="1" noTag />
+    </ng-template>
+
+    <ng-template zListMoreItem>
+      <z-demo-lorem class="app-list-more__card" count="1" noTag />
+    </ng-template>
+
+    <ng-template zListMoreItem>
+      <z-demo-lorem class="app-list-more__card" count="1" noTag />
+    </ng-template>
+
+    <ng-template zListMoreItem>
+      <z-demo-lorem class="app-list-more__card" count="1" noTag />
+    </ng-template>
+  </z-list-more>
+</z-demo-container>
