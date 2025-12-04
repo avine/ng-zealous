@@ -6,6 +6,11 @@ describe('mergeClasses', () => {
     expect(result).toBe('foo bar baz');
   });
 
+  it('should filter out empty strings', () => {
+    const result = mergeClasses('foo', '', 'bar');
+    expect(result).toBe('foo bar');
+  });
+
   it('should filter out false values', () => {
     const result = mergeClasses('foo', false, 'bar');
     expect(result).toBe('foo bar');
@@ -41,15 +46,25 @@ describe('mergeClasses', () => {
     expect(result).toBe('foo');
   });
 
-  it('should filter out empty strings', () => {
-    const result = mergeClasses('foo', '', 'bar');
-    expect(result).toBe('foo bar');
-  });
-
   it('should handle conditional class names', () => {
     const isActive = true;
     const isDisabled = false;
     const result = mergeClasses('base', isActive && 'active', isDisabled && 'disabled');
     expect(result).toBe('base active');
+  });
+
+  it('should handle multiple spaces within a class string', () => {
+    const result = mergeClasses('foo   bar');
+    expect(result).toBe('foo bar');
+  });
+
+  it('should handle leading and trailing spaces', () => {
+    const result = mergeClasses('   foo   ');
+    expect(result).toBe('foo');
+  });
+
+  it('should not be designed to remove duplicate values', () => {
+    const result = mergeClasses('foo', 'bar', 'foo');
+    expect(result).toBe('foo bar foo');
   });
 });

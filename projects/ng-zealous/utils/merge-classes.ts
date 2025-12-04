@@ -20,4 +20,7 @@
  * ```
  */
 export const mergeClasses = (...classList: (string | false | null | undefined)[]) =>
-  classList.filter((classItem) => !!classItem).join(' ');
+  classList
+    .flatMap((classItem) => (classItem || '').split(' '))
+    .filter((classItem) => classItem !== '')
+    .join(' ');
