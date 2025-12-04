@@ -35,6 +35,12 @@
               }
             ],
             "styles": ["src/styles.scss"],
+            "scripts": [
+              {
+                "input": "projects/ng-zealous/scripts/restore-theme-on-page-load.js",
+                "inject": false
+              }
+            ],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
@@ -177,6 +183,10 @@
             ],
             "styles": ["projects/ng-zealous-docs/src/styles.scss"],
             "scripts": [
+              {
+                "input": "projects/ng-zealous/scripts/restore-theme-on-page-load.js",
+                "inject": false
+              },
               "node_modules/@highlightjs/cdn-assets/highlight.min.js",
               "node_modules/axe-core/axe.min.js"
             ],
