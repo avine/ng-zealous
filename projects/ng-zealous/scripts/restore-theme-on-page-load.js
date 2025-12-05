@@ -40,13 +40,15 @@
 
 */
 
-const Z_THEME_COOKIE_KEY = 'z-theme';
-const zThemeDarkCookieValue = 'dark';
-const Z_THEME_DARK_CLASS_NAME = 'z-theme-dark';
+(() => {
+  const Z_THEME_COOKIE_KEY = 'z-theme';
+  const zThemeDarkCookieValue = 'dark';
+  const Z_THEME_DARK_CLASS_NAME = 'z-theme-dark';
 
-const isDarkTheme = window.document.cookie.includes(
-  `${Z_THEME_COOKIE_KEY}=${zThemeDarkCookieValue}`,
-);
-if (isDarkTheme) {
-  window.document.body.classList.add(Z_THEME_DARK_CLASS_NAME);
-}
+  const isDarkTheme = window.document.cookie.includes(
+    `${Z_THEME_COOKIE_KEY}=${zThemeDarkCookieValue}`,
+  );
+  if (isDarkTheme) {
+    window.document.body.classList.add(Z_THEME_DARK_CLASS_NAME);
+  }
+})();
