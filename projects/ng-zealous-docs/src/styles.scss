@@ -2,5 +2,5 @@
 @use './styles/fonts';
 @use './styles/material';
 
-@use '../../../projects/ng-zealous/styles/core.scss';
-@use '../../../projects/ng-zealous/styles/highlight-js.scss';
+@use 'ng-zealous/styles/core.scss';
+@use 'ng-zealous/styles/highlight-js.scss';

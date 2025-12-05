@@ -28,6 +28,9 @@
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "stylePreprocessorOptions": {
+              "includePaths": ["projects"]
+            },
             "assets": [
               {
                 "glob": "**/*",
@@ -175,6 +178,9 @@
             "browser": "projects/ng-zealous-docs/src/main.ts",
             "tsConfig": "projects/ng-zealous-docs/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "stylePreprocessorOptions": {
+              "includePaths": ["projects"]
+            },
             "assets": [
               {
                 "glob": "**/*",
