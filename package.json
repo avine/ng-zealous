@@ -9,6 +9,8 @@
     "serve:ssr:starter": "node dist/starter/server/server.mjs",
     "start:docs": "ng serve ng-zealous-docs",
     "build:docs": "ng build ng-zealous-docs",
+    "build:github-pages": "ng build ng-zealous-docs -c production,github-pages",
+    "postbuild:github-pages": "cp docs/index.html docs/404.html",
     "serve:ssr:docs": "node dist/ng-zealous-docs/server/server.mjs",
     "prebuild:lib": "pnpm --dir scripts/update-ng-zealous-peer-deps start",
     "build:lib": "ng build ng-zealous",

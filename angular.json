@@ -223,6 +223,16 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "github-pages": {
+              "server": false,
+              "outputMode": "static",
+              "outputPath": {
+                "base": "docs",
+                "browser": "",
+                "media": "media"
+              },
+              "baseHref": "/ng-zealous/"
             }
           },
           "defaultConfiguration": "production"
